@@ -2,254 +2,324 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Sarvajeeth U K - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="container">
-            <h1 class="logo">Sarvajeeth U K</h1>
+    <header>
+        <nav class="navbar container">
+            <div class="logo">Sarvajeeth U K</div>
+            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#education">Education</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#awards">Awards</a></li>
+                <li><a href="#leadership">Leadership</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#blog">Blog</a></li>
             </ul>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Home Section -->
-    <section id="home">
-        <div class="container">
-            <div class="home-content">
-                <!-- Add your profile image here -->
-                <img src="image.jpg" alt="Sarvajeeth U K" class="profile-pic">
-                <h2>Hello, I'm Sarvajeeth U K</h2>
-                <p>Passionate Developer | Machine Learning Enthusiast | Problem Solver</p>
-                <a href="#contact" class="btn">Get in Touch</a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <h1>Sarvajeeth U K - Aspiring Software Engineer and Innovator</h1>
+                <p class="tagline">Crafting Scalable Solutions with Technology.</p>
+                <div class="hero-links">
+                    <a href="https://github.com/Sarvajeet2003" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/sarvajeeth-u-k-9aa85a220" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://leetcode.com/sarvajeeth21417" target="_blank"><i class="fas fa-code"></i></a>
+                    <a href="#projects"><i class="fas fa-briefcase"></i></a>
+                    <a href="Sarvajeeth_Resume.pdf" class="resume-button" target="_blank">Download Resume</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="image3.jpeg" alt="Sarvajeeth U K">
             </div>
         </div>
     </section>
 
-
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>Indraprastha Institute of Information Technology, Delhi</h3>
-                <p>B.Tech (CSSS)</p>
-                <span>Dec 2021 – Present | Percentage: 96.6%</span>
+    <!-- About Me Section -->
+    <section class="about" id="about">
+        <div class="container about-inner">
+            <div class="about-image">
+                <img src="image.jpeg" alt="About Sarvajeeth U K">
             </div>
-            <div class="education-item">
-                <h3>BGS Pu College, Mysuru (Karnataka)</h3>
-                <p>Karnataka Secondary Education Examination Board</p>
-                <span>2019 – 2021 | Percentage: 95.6%</span>
-            </div>
-            <div class="education-item">
-                <h3>St Joseph’s Central School, Mysuru (Karnataka)</h3>
-                <p>CBSE Board</p>
-                <span>2009 – 2019 | Percentage: 95.6%</span>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>Hello! I am <strong>Sarvajeeth U K</strong>, a B.Tech student at IIIT Delhi specializing in Computer Science and Social Sciences (CSSS) with a CGPA of 7.55. I have a solid academic background, achieving 96.6% in Higher Secondary (BGS Pu
+                    College) and 95.6% in Secondary School (St. Joseph’s Central School).</p>
+                <p>With a deep interest in backend development, machine learning, and scalable systems, I strive to leverage technology to create innovative solutions that have real-world impact. My experiences across multiple internships and projects have
+                    helped me refine my ability to solve complex challenges and collaborate effectively.</p>
+                <p>When I’m not coding, I’m exploring new frameworks, reading about cutting-edge research, or contributing to student-led initiatives. My mission is to keep learning, stay curious, and transform ideas into tangible outcomes.</p>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section class="skills" id="skills">
         <div class="container">
             <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
+            <div class="skills-container">
+                <div class="skill-category">
                     <h3>Programming Languages</h3>
-                    <p>Java, Python, R, C++, Kotlin, HTML, CSS, JavaScript</p>
+                    <ul>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>R</li>
+                        <li>C++</li>
+                        <li>Kotlin</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
                 </div>
-                <div class="skill-item">
-                    <h3>Backend & Web Development</h3>
-                    <p>Django, Flask, REST API, Pymongo, Postman</p>
+                <div class="skill-category">
+                    <h3>Backend Development</h3>
+                    <ul>
+                        <li>Django</li>
+                        <li>Flask</li>
+                        <li>REST APIs</li>
+                        <li>pymongo</li>
+                        <li>Postman</li>
+                    </ul>
                 </div>
-                <div class="skill-item">
+                <div class="skill-category">
                     <h3>Databases</h3>
-                    <p>MongoDB, MySQL</p>
+                    <ul>
+                        <li>MongoDB</li>
+                        <li>MySQL</li>
+                    </ul>
                 </div>
-                <div class="skill-item">
+                <div class="skill-category">
                     <h3>DevOps & Cloud</h3>
-                    <p>Docker, AWS, Linux, Shell-Scripting</p>
+                    <ul>
+                        <li>Docker</li>
+                        <li>AWS</li>
+                        <li>Linux</li>
+                        <li>Shell-Scripting</li>
+                    </ul>
                 </div>
-                <div class="skill-item">
-                    <h3>Tools & Version Control</h3>
-                    <p>Git, GitHub, Selenium WebDriver, Unity, LibGDX</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Operating Systems</h3>
-                    <p>Linux, MacOS</p>
-                </div>
-                <div class="skill-item">
+                <div class="skill-category">
                     <h3>Data Analysis & Visualization</h3>
-                    <p>Pandas, Numpy, Matplotlib</p>
+                    <ul>
+                        <li>Pandas</li>
+                        <li>NumPy</li>
+                        <li>Matplotlib</li>
+                    </ul>
                 </div>
-                <div class="skill-item">
-                    <h3>UI/UX & Design Tools</h3>
-                    <p>Figma, Canva</p>
+                <div class="skill-category">
+                    <h3>UI/UX Design Tools</h3>
+                    <ul>
+                        <li>Figma</li>
+                        <li>Canva</li>
+                    </ul>
                 </div>
-                <div class="skill-item">
-                    <h3>Machine Learning & AI Frameworks</h3>
-                    <p>TensorFlow, Keras, OpenCV, scikit-learn</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Other Technologies</h3>
-                    <p>SMTP, Alexa Skill Development</p>
-                </div>
-                <div class="skill-item">
-                    <h3>Expertise & Electives</h3>
-                    <p>Database Management System, Information Retrieval, Computer Architecture, Object-Oriented Programming, Android App Development, Web Development, API Development & Integration, Facial Expression Detection, Image Processing</p>
+                <div class="skill-category">
+                    <h3>Machine Learning Frameworks</h3>
+                    <ul>
+                        <li>TensorFlow</li>
+                        <li>Keras</li>
+                        <li>OpenCV</li>
+                        <li>scikit-learn</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
-    <section id="experience">
+    <section class="experience" id="experience">
         <div class="container">
             <h2>Experience</h2>
             <div class="experience-item">
-                <h3>Developer Intern at <a href="https://drive.google.com/file/d/1p6LUwtsS9ZfypxhIe1abIsWXGHsz3eNU/view?usp=sharing" target="_blank" class="external-link">Caliper Business Solutions</a></h3>
-                <span>May 2023 – July 2023</span>
-                <p>Caliper Business Solutions is a logistics-based company where I worked on backend development using Django, implemented APIs, leveraged web scraping techniques, and created efficient communication channels.</p>
-            </div>
-            <div class="experience-item">
-                <h3>Intern at <a href="https://drive.google.com/file/d/1_liyQSdJM8YxiL8-tnBF6TDDVWi4JHk2/view?usp=sharing" target="_blank" class="external-link">ExcelSoft Technologies Pvt Ltd</a></h3>
-                <span>May 2024 – July 2024</span>
-                <p>ExcelSoft Technologies provides innovative technology-based solutions in learning, assessments, and training management. I worked on predicting user engagement with questions using cosine similarity and TF-IDF Vectorizer, preprocessing
-                    text data, and developing efficient algorithms for predictive modeling.</p>
-            </div>
-            <div class="experience-item">
-                <h3>Research Intern at Complex Systems Laboratory</h3>
-                <span>Aug 2023 – Present</span>
-                <p>Under Professor Ganesh Bagler, I initially worked as a Web Developer and am currently developing a Machine Learning model in Computational Gastronomy.</p>
-            </div>
-            <div class="experience-item">
-                <h3>Investment Banking Fellow at <a href="https://drive.google.com/file/d/1jc8zdPYoWEB8cmUILZ6BWVxuhdsAUoBc/view?usp=sharing" target="_blank" class="external-link">Marquee Equity</a></h3>
-                <span>June 2023 – January 2024</span>
-                <p>Prepared monthly research reports on expected growth in the investment sector.</p>
-            </div>
-            <div class="experience-item">
-                <h3>Positions of Responsibility</h3>
+                <h3>Caliper Business Solutions - Intern</h3>
+                <p>Responsibilities:</p>
                 <ul>
-                    <li>Operations Head, Enactus – IIIT Delhi (Dec 2024 – Jan 2024)</li>
-                    <li>Operations Head, Odyssey (Annual Cultural Fest) – IIIT Delhi (Feb 2023 – Apr 2023)</li>
-                    <li>Campus Ambassador – IIT Patna (Mar 2022 – Present)</li>
+                    <li>Developed web scraping scripts to retrieve data from multiple sources.</li>
+                    <li>Integrated APIs for seamless data exchange and implemented geo-fencing solutions.</li>
+                    <li>Created real-time weather alerts using Twilio API.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>ExcelSoft Technologies - Intern</h3>
+                <p>Responsibilities:</p>
+                <ul>
+                    <li>Developed predictive models for user engagement leveraging historical data.</li>
+                    <li>Applied TF-IDF Vectorization and cosine similarity for content personalization.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Complex Systems Laboratory, IIIT Delhi - Intern</h3>
+                <p>Responsibilities:</p>
+                <ul>
+                    <li>Developed ML models for computational gastronomy.</li>
+                    <li>Implemented personalized recipe recommendations and allergen detection solutions.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>Marquee Equity - Intern</h3>
+                <p>Responsibilities:</p>
+                <ul>
+                    <li>Authored monthly research reports analyzing investment sector growth and trends.</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section class="projects" id="projects">
         <div class="container">
             <h2>Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
+            <div class="project-list">
                 <div class="project-item">
-                    <h3>Geo-Fence</h3>
-                    <span>May 2023 – July 2023</span>
-                    <p>Developed a geo-fencing system for tracking trucks using Django, Python, REST API, and Django ORM.</p>
+                    <h3>Geo-Fence System</h3>
+                    <p>Backend solution for truck tracking with Django and REST APIs.</p>
                 </div>
-                <!-- Project 2 -->
                 <div class="project-item">
-                    <h3>SMS - Weather Alert</h3>
-                    <span>May 2023 – July 2023</span>
-                    <p>Led a project to send real-time SMS alerts to truck drivers during adverse weather conditions using Python, Web Scraping, Twilio API, and Django.</p>
+                    <h3>Weather Alert System</h3>
+                    <p>Automated SMS alerts for adverse weather conditions using Twilio API.</p>
                 </div>
-                <!-- Project 3 -->
                 <div class="project-item">
-                    <h3>Automated Email and Scorecard Generation</h3>
-                    <span>May 2023 – July 2023</span>
-                    <p>Developed an automated email system to send personalized emails and PDF scorecards to transporters using Python, Django, SMTP, and FPDF.</p>
+                    <h3>ML Allergen Model</h3>
+                    <p>Machine learning models for allergen detection with optimized performance.</p>
                 </div>
-                <!-- Project 4 -->
                 <div class="project-item">
-                    <h3><a href="https://github.com/Sarvajeet2003/IP_Winter_2023" target="_blank" class="external-link">ML Allergen Model</a></h3>
-                    <span>Jan 2024 – May 2024</span>
-                    <p>Developed machine learning models to classify protein sequences as allergenic or non-allergenic using TensorFlow, Keras, scikit-learn, and Pandas/Numpy.</p>
+                    <h3>FaceRhythm Web App</h3>
+                    <p>Emotion detection using TensorFlow, integrated with Spotify API for music recommendations.</p>
                 </div>
-                <!-- Project 5 -->
                 <div class="project-item">
-                    <h3><a href="https://github.com/AbhishekIIITD/RecipeADay" target="_blank" class="external-link">RecipieDB Emailer</a></h3>
-                    <span>Oct 2023 – Dec 2023</span>
-                    <p>Created a dynamic website for personalized recipe suggestions using React, Django, MongoDB, SMTP, and JavaScript/HTML/CSS.</p>
+                    <h3>RecipeDB Emailer</h3>
+                    <p>Weekly recipe suggestions using SMTP and MongoDB.</p>
                 </div>
-                <!-- Project 6 -->
                 <div class="project-item">
-                    <h3><a href="https://github.com/Sarvajeet2003/Weather-Forecast-App" target="_blank" class="external-link">WeatheApp</a></h3>
-                    <span>Mar 2024 – May 2024</span>
-                    <p>Developed an Android weather application with real-time weather data and future predictions using Kotlin, Android Studio, and OpenWeather API.</p>
+                    <h3>Social Media Sentiment Analyzer</h3>
+                    <p>NLP-based tool analyzing Twitter data trends with data visualizations.</p>
                 </div>
-                <!-- Project 7 -->
                 <div class="project-item">
-                    <h3><a href="https://github.com/Sarvajeet2003/FaceRhythm" target="_blank" class="external-link">FaceRythm</a></h3>
-                    <span>Mar 2024 – May 2024</span>
-                    <p>Created a web application to detect emotions and suggest songs based on mood using Python, TensorFlow/Keras, Spotify API, React, and Flask.</p>
+                    <h3>AI-Powered Customer Service Chatbot</h3>
+                    <p>Flask-based chatbot using TensorFlow for natural language understanding.</p>
                 </div>
-                <!-- Project 8 -->
                 <div class="project-item">
-                    <h3>Response Prediction System</h3>
-                    <span>May 2024 – July 2024</span>
-                    <p>Developed a system to predict user answers using TF-IDF Vectorization, Cosine Similarity, scikit-learn, and Pandas/Numpy.</p>
+                    <h3>E-commerce Platform Development</h3>
+                    <p>Scalable website using ReactJS and Node.js, integrated with Stripe API for payments.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Awards Section -->
-    <section id="awards">
+    <!-- Awards and Achievements -->
+    <section class="awards" id="awards">
         <div class="container">
             <h2>Awards & Achievements</h2>
-            <ul class="awards-list">
-                <li>Secured 2nd Place in Enactus Ideathon</li>
-                <li>Secured 2nd Place in ScratchIt Ideathon</li>
-                <li>Solved 500+ Problems on <a href="https://leetcode.com/u/sarvajeeth21417/" target="_blank" class="external-link">LeetCode</a></li>
-                <li>Rating of 796 on <a href="https://codeforces.com/profile/sarvajeeth21417" target="_blank" class="external-link">Codeforces</a></li>
-                <li>Received academic excellence awards for performance in Class 9 and 10</li>
+            <ul>
+                <li>Dean’s Award for Academic Excellence</li>
+                <li>2nd Place in Enactus Hackathon</li>
+                <li>Solved 500+ problems on LeetCode</li>
             </ul>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
+    <!-- Leadership and Activities -->
+    <section class="leadership" id="leadership">
         <div class="container">
-            <h2>Contact</h2>
-            <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:sarvajeeth21417@iiitd.ac.in" class="external-link">sarvajeeth21417@iiitd.ac.in</a></p>
-                <p><strong>Address:</strong> Mysuru, Karnataka</p>
-                <!-- Optional: Add a contact form here -->
+            <h2>Leadership & Activities</h2>
+            <ul>
+                <li>Operations Head, Enactus, IIIT Delhi</li>
+                <li>Operations Head, Odyssey (Annual Cultural Fest)</li>
+                <li>Campus Ambassador, IIT Patna</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Blog Section
+    <section class="blog" id="blog">
+        <div class="container">
+            <h2>Blog</h2>
+            <p>Coming soon! Stay tuned for articles on backend development, machine learning, and technology insights.</p>
+            <div class="newsletter">
+                <h3>Subscribe to Newsletter</h3>
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <!-- <form class="contact-form">
+                <label for="name">Name*</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message*</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form> -->
+            <div class="contact-details">
+                <p>Email: <a href="mailto:sarvajeeth21417@iiitd.ac.in">sarvajeeth21417@iiitd.ac.in</a></p>
+                <p>Phone: <a href="tel:+918310934161">+91-8310934161</a></p>
+                <div class="contact-links">
+                    <a href="https://github.com/Sarvajeet2003" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://leetcode.com/sarvajeeth21417" target="_blank"><i class="fas fa-code"></i> LeetCode</a>
+                    <a href="#projects"><i class="fas fa-briefcase"></i> Portfolio</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Sarvajeeth U K. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/sarvajeeth-u-k-9aa85a220" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <div class="footer-nav">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#awards">Awards</a>
+                <a href="#leadership">Leadership</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <p>© 2024 Sarvajeeth U K. All Rights Reserved.</p>
+            <div class="footer-socials">
                 <a href="https://github.com/Sarvajeet2003" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://codeforces.com/profile/sarvajeeth21417" target="_blank"><i class="fas fa-code"></i></a>
-                <a href="https://leetcode.com/u/sarvajeeth21417/" target="_blank"><i class="fas fa-terminal"></i></a>
-                <!-- Add more social links as needed -->
+                <a href="https://www.linkedin.com/in/sarvajeeth-u-k-9aa85a220" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://x.com/Sarvajeeth_U_K" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
     </footer>
+
+    <!-- Optional JavaScript for Mobile Menu Toggle -->
+    <script>
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
