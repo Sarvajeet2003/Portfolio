@@ -2,324 +2,160 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Sarvajeeth U K - Software Developer">
     <title>Sarvajeeth U K - Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> -->
 </head>
 
 <body>
     <header>
-        <nav class="navbar container">
-            <div class="logo">Sarvajeeth U K</div>
-            <div class="mobile-menu-toggle"><i class="fas fa-bars"></i></div>
-            <ul class="nav-links">
+        <nav>
+            <h1>Sarvajeeth U K</h1>
+            <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#leadership">Leadership</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#blog">Blog</a></li>
+                <li><a href="resume.pdf" download class="cv-btn">Download CV</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-inner">
-            <div class="hero-content">
-                <h1>Sarvajeeth U K - Aspiring Software Engineer and Innovator</h1>
-                <p class="tagline">Crafting Scalable Solutions with Technology.</p>
-                <div class="hero-links">
-                    <a href="https://github.com/Sarvajeet2003" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/sarvajeeth-u-k-9aa85a220" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://leetcode.com/sarvajeeth21417" target="_blank"><i class="fas fa-code"></i></a>
-                    <a href="#projects"><i class="fas fa-briefcase"></i></a>
-                    <a href="Sarvajeeth_Resume.pdf" class="resume-button" target="_blank">Download Resume</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <img src="image3.jpeg" alt="Sarvajeeth U K">
-            </div>
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Building Innovative Solutions</h2>
+            <p>Passionate about Machine Learning, Backend Development, and Scalable Systems</p>
+            <a href="#projects" class="cta-btn">Explore Projects</a>
         </div>
     </section>
 
-    <!-- About Me Section -->
-    <section class="about" id="about">
-        <div class="container about-inner">
-            <div class="about-image">
-                <img src="image.jpeg" alt="About Sarvajeeth U K">
+    <section id="about">
+        <div class="about-content">
+            <img src="profile.jpg" alt="Sarvajeeth U K" class="profile-img">
+            <div class="about-text">
+                <h3>About Me</h3>
+                <p>I am a B.Tech student at IIIT Delhi specializing in Computer Science and Social Sciences. My interests include machine learning, scalable systems, and creating impactful applications. I enjoy solving complex problems and contributing to
+                    open-source projects.</p>
             </div>
-            <div class="about-content">
-                <h2>About Me</h2>
-                <p>Hello! I am <strong>Sarvajeeth U K</strong>, a B.Tech student at IIIT Delhi specializing in Computer Science and Social Sciences (CSSS) with a CGPA of 7.55. I have a solid academic background, achieving 96.6% in Higher Secondary (BGS Pu
-                    College) and 95.6% in Secondary School (St. Joseph’s Central School).</p>
-                <p>With a deep interest in backend development, machine learning, and scalable systems, I strive to leverage technology to create innovative solutions that have real-world impact. My experiences across multiple internships and projects have
-                    helped me refine my ability to solve complex challenges and collaborate effectively.</p>
-                <p>When I’m not coding, I’m exploring new frameworks, reading about cutting-edge research, or contributing to student-led initiatives. My mission is to keep learning, stay curious, and transform ideas into tangible outcomes.</p>
+        </div>
+    </section>
+    <!-- Work Experience Section -->
+    <section id="experience" class="section">
+        <h2>Work Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Research Intern | Complex Systems Lab, IIIT Delhi</h3>
+                    <p>August 2023 - Present</p>
+                    <ul>
+                        <li>Built ML models for allergen detection in protein sequences</li>
+                        <li>Developed a recipe recommendation system using collaborative filtering</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Data Science Intern | Excelsoft Technologies Pvt Ltd</h3>
+                    <p>May 2024 - July 2024</p>
+                    <ul>
+                        <li>Developed predictive models for user engagement analysis</li>
+                        <li>Performed data cleaning and exploratory analysis for content personalization</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>Developer Intern | Caliper Business Solutions</h3>
+                    <p>May 2023 - July 2023</p>
+                    <ul>
+                        <li>Automated SMS alerts for adverse weather using Twilio API</li>
+                        <li>Designed geo-fencing system with Django improving route compliance</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="skills" id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Programming Languages</h3>
-                    <ul>
-                        <li>Java</li>
-                        <li>Python</li>
-                        <li>R</li>
-                        <li>C++</li>
-                        <li>Kotlin</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Backend Development</h3>
-                    <ul>
-                        <li>Django</li>
-                        <li>Flask</li>
-                        <li>REST APIs</li>
-                        <li>pymongo</li>
-                        <li>Postman</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <ul>
-                        <li>MongoDB</li>
-                        <li>MySQL</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>DevOps & Cloud</h3>
-                    <ul>
-                        <li>Docker</li>
-                        <li>AWS</li>
-                        <li>Linux</li>
-                        <li>Shell-Scripting</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Data Analysis & Visualization</h3>
-                    <ul>
-                        <li>Pandas</li>
-                        <li>NumPy</li>
-                        <li>Matplotlib</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>UI/UX Design Tools</h3>
-                    <ul>
-                        <li>Figma</li>
-                        <li>Canva</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Machine Learning Frameworks</h3>
-                    <ul>
-                        <li>TensorFlow</li>
-                        <li>Keras</li>
-                        <li>OpenCV</li>
-                        <li>scikit-learn</li>
-                    </ul>
-                </div>
+    <section id="skills" class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>Python, Java, Kotlin, SQL</p>
+            </div>
+            <div class="skill-card">
+                <h3>Backend Development</h3>
+                <p>Django, Flask, Spring Boot, REST APIs</p>
+            </div>
+            <div class="skill-card">
+                <h3>Data Science</h3>
+                <p>Pandas, NumPy, TensorFlow, scikit-learn</p>
+            </div>
+            <div class="skill-card">
+                <h3>Mobile Development</h3>
+                <p>Kotlin, Android Studio</p>
+            </div>
+            <div class="skill-card">
+                <h3>Cloud Services</h3>
+                <p>Docker, AWS, Heroku</p>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="experience" id="experience">
-        <div class="container">
-            <h2>Experience</h2>
-            <div class="experience-item">
-                <h3>Caliper Business Solutions - Intern</h3>
-                <p>Responsibilities:</p>
-                <ul>
-                    <li>Developed web scraping scripts to retrieve data from multiple sources.</li>
-                    <li>Integrated APIs for seamless data exchange and implemented geo-fencing solutions.</li>
-                    <li>Created real-time weather alerts using Twilio API.</li>
-                </ul>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>ProdSafe</h3>
+                <p>Flask-based product safety checker using OpenFoodFacts API</p>
+                <a href="https://github.com/Sarvajeet2003/ProdSafe" target="_blank">View Repository</a>
             </div>
-            <div class="experience-item">
-                <h3>ExcelSoft Technologies - Intern</h3>
-                <p>Responsibilities:</p>
-                <ul>
-                    <li>Developed predictive models for user engagement leveraging historical data.</li>
-                    <li>Applied TF-IDF Vectorization and cosine similarity for content personalization.</li>
-                </ul>
+            <div class="project-card">
+                <h3>Course ChatBot</h3>
+                <p>NLP chatbot for university course regulations using FAISS</p>
+                <a href="https://github.com/Sarvajeet2003/Course-ChatBot" target="_blank">View Repository</a>
             </div>
-            <div class="experience-item">
-                <h3>Complex Systems Laboratory, IIIT Delhi - Intern</h3>
-                <p>Responsibilities:</p>
-                <ul>
-                    <li>Developed ML models for computational gastronomy.</li>
-                    <li>Implemented personalized recipe recommendations and allergen detection solutions.</li>
-                </ul>
+            <div class="project-card">
+                <h3>Moodipy Music Player</h3>
+                <p>Emotion-based music app using TensorFlow and Spotify API</p>
+                <a href="https://github.com/Sarvajeet2003/Spotipy" target="_blank">View Repository</a>
             </div>
-            <div class="experience-item">
-                <h3>Marquee Equity - Intern</h3>
-                <p>Responsibilities:</p>
-                <ul>
-                    <li>Authored monthly research reports analyzing investment sector growth and trends.</li>
-                </ul>
+            <div class="project-card">
+                <h3>ML Allergen Model</h3>
+                <p>Machine learning pipeline for allergen classification</p>
+                <a href="https://github.com/Sarvajeet2003/ML_Allergen_Model" target="_blank">View Repository</a>
+            </div>
+            <div class="project-card">
+                <h3>WeatherApp</h3>
+                <p>Android app for real-time weather updates using Kotlin</p>
+                <a href="https://github.com/Sarvajeet2003/Weather-Forecast-App" target="_blank">View Repository</a>
+            </div>
+            <div class="project-card">
+                <h3>MedEase</h3>
+                <p>Hospital readmission model using FHIR API and OpenAI</p>
+                <a href="https://github.com/Sarvajeet2003/MedEase" target="_blank">View Repository</a>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project-list">
-                <div class="project-item">
-                    <h3>Geo-Fence System</h3>
-                    <p>Backend solution for truck tracking with Django and REST APIs.</p>
-                </div>
-                <div class="project-item">
-                    <h3>Weather Alert System</h3>
-                    <p>Automated SMS alerts for adverse weather conditions using Twilio API.</p>
-                </div>
-                <div class="project-item">
-                    <h3>ML Allergen Model</h3>
-                    <p>Machine learning models for allergen detection with optimized performance.</p>
-                </div>
-                <div class="project-item">
-                    <h3>FaceRhythm Web App</h3>
-                    <p>Emotion detection using TensorFlow, integrated with Spotify API for music recommendations.</p>
-                </div>
-                <div class="project-item">
-                    <h3>RecipeDB Emailer</h3>
-                    <p>Weekly recipe suggestions using SMTP and MongoDB.</p>
-                </div>
-                <div class="project-item">
-                    <h3>Social Media Sentiment Analyzer</h3>
-                    <p>NLP-based tool analyzing Twitter data trends with data visualizations.</p>
-                </div>
-                <div class="project-item">
-                    <h3>AI-Powered Customer Service Chatbot</h3>
-                    <p>Flask-based chatbot using TensorFlow for natural language understanding.</p>
-                </div>
-                <div class="project-item">
-                    <h3>E-commerce Platform Development</h3>
-                    <p>Scalable website using ReactJS and Node.js, integrated with Stripe API for payments.</p>
-                </div>
-            </div>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-info">
+            <a href="mailto:sarvajeeth21417@iiitd.ac.in"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://github.com/Sarvajeet2003"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://leetcode.com/u/sarvajeeth21417"><i class="fab fa-leetcode"></i> LeetCode</a>
+            <a href="https://linkedin.com/in/sarvajeeth-uk"><i class="fab fa-linkedin"></i> LinkedIn</a>
         </div>
     </section>
 
-    <!-- Awards and Achievements -->
-    <section class="awards" id="awards">
-        <div class="container">
-            <h2>Awards & Achievements</h2>
-            <ul>
-                <li>Dean’s Award for Academic Excellence</li>
-                <li>2nd Place in Enactus Hackathon</li>
-                <li>Solved 500+ problems on LeetCode</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Leadership and Activities -->
-    <section class="leadership" id="leadership">
-        <div class="container">
-            <h2>Leadership & Activities</h2>
-            <ul>
-                <li>Operations Head, Enactus, IIIT Delhi</li>
-                <li>Operations Head, Odyssey (Annual Cultural Fest)</li>
-                <li>Campus Ambassador, IIT Patna</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Blog Section
-    <section class="blog" id="blog">
-        <div class="container">
-            <h2>Blog</h2>
-            <p>Coming soon! Stay tuned for articles on backend development, machine learning, and technology insights.</p>
-            <div class="newsletter">
-                <h3>Subscribe to Newsletter</h3>
-                <form>
-                    <input type="email" placeholder="Enter your email" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <!-- <form class="contact-form">
-                <label for="name">Name*</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">Email*</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="message">Message*</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form> -->
-            <div class="contact-details">
-                <p>Email: <a href="mailto:sarvajeeth21417@iiitd.ac.in">sarvajeeth21417@iiitd.ac.in</a></p>
-                <p>Phone: <a href="tel:+918310934161">+91-8310934161</a></p>
-                <div class="contact-links">
-                    <a href="https://github.com/Sarvajeet2003" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="https://leetcode.com/sarvajeeth21417" target="_blank"><i class="fas fa-code"></i> LeetCode</a>
-                    <a href="#projects"><i class="fas fa-briefcase"></i> Portfolio</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
     <footer>
-        <div class="container">
-            <div class="footer-nav">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#awards">Awards</a>
-                <a href="#leadership">Leadership</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <p>© 2024 Sarvajeeth U K. All Rights Reserved.</p>
-            <div class="footer-socials">
-                <a href="https://github.com/Sarvajeet2003" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/sarvajeeth-u-k-9aa85a220" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://x.com/Sarvajeeth_U_K" target="_blank"><i class="fab fa-twitter"></i></a>
-            </div>
-        </div>
+        <p>&copy; 2025 Sarvajeeth U K</p>
     </footer>
-
-    <!-- Optional JavaScript for Mobile Menu Toggle -->
-    <script>
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
 </body>
 
 </html>
