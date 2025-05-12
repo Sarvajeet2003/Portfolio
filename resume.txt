@@ -1,0 +1,63 @@
+Sarvajeeth U K
+sarvajeeth21417@iiitd.ac.in | +91-8310934161 | GitHub | LeetCode | Portfolio
+Education
+Indraprastha Institute of Information Technology, Delhi
+Bachelor of Technology in CSSS (8th Semester) BGS PU College, Mysuru Karnataka Board of Secondary School St. Joseph’s Central School, Mysuru Secondary School Certificate (CBSE) Technical Skills
+Dec 2021 – Present
+Percentage: 96.6%
+2019 – 2021
+Percentage: 95.6%
+2009 – 2019
+Programming Languages: Python, Java, Kotlin, SQL
+Backend Development: Django, Flask, REST API, pymongo, Postman, SpringBoot
+Databases: MongoDB, MySQL
+Cloud and DevOps: Docker, Linux, Shell-Scripting, Git
+Data Science and Machine Learning: Pandas, NumPy, TensorFlow, Keras, scikit-learn, OpenCV
+UI/UX Design Tools: Figma, Canva
+Other Technologies: SMTP, Twilio API, Alexa Skill Development
+Experience
+Research Intern — Complex Systems Lab, IIIT Delhi Machine Learning for Computational Gastronomy
+Built ML models for allergen detection in a Protein Sequence
+Engineered a recipe recommendation system using collaborative filtering, deployed via Flask.
+Data Science Intern — Excelsoft Technologies Pvt Ltd Data Science & Data Analyzation
+Built predictive models for user engagement analysis using TF-IDF and cosine similarity.
+Performed data cleaning and exploratory analysis to optimize content personalization accuracy
+Developer Intern — Caliper Business Solutions Backend Development & API Integration
+Automated SMS alerts for adverse weather using Twilio API, reducing logistics delays by 30%.
+Designed geo-fencing system with Django, improving truck route compliance by 25%.
+Projects
+Aug 2023 – Present
+May 2024 – Jul 2024
+May 2023 – Jul 2023
+ProdSafe Jan 2025 - Current
+Developed a Flask-based system for barcode scanning and user authentication.
+Implemented SQLite database for user profile management.
+Tech: Python, Flask, SQLite — Code
+Course ChatBot & Suggester Built a chatbot using NLP and FAISS for university course regulation queries.
+Extracted and indexed PDFs for fast and accurate responses.
+Tech: Python, Flask, FAISS, NLP — Code
+Moodipy: Emotion-Based Music Player Integrated emotion detection with Spotify API for real-time music recommendations.
+Used a deep learning model to classify emotions from facial expressions.
+Tech: Python, Flask, TensorFlow, Spotify API — Code
+Nov 2024 – Jan 2025
+Aug 2024 – Nov 2024
+ML Allergen Model Developed a machine learning pipeline for allergen classification with TensorFlow and scikit-learn.
+Improved prediction accuracy through feature selection, data augmentation, and hyperparameter tuning.
+Technologies: Python, TensorFlow, scikit-learn. Code
+Jan 2024 – May 2024
+WeatherApp Developed an Android app for real-time and predictive weather data.
+Technologies Used: Kotlin, OpenWeather API, Android Studio. — Code
+June 2024 – Aug 2024
+MedEase Dec 2024
+Built a machine learning model to predict hospital readmissions using FHIR API for data integration.
+Implemented an OpenAI summary generator to provide concise and actionable insights from patient data.
+Tech: Python, Jupyter Notebook, Machine Learning, FHIR API, OpenAI API — Code
+Awards and Achievements
+Dean’s Award for Academic Excellence: Received in my 3rd Year at IIITD.
+2nd Place - Enactus Hackathon: Recognized for innovative project development.
+Competitive Programming: Solved 500+ problems on LeetCode, emphasizing expertise in Data Structures and Algo-
+rithms.
+Interests and Hobbies
+Extra Activities: Chess, Trekking, and exploring nature.
+Project Development: Passionate about building innovative software projects and experimenting with new technologies.
+Music : Enjoy listening to tech podcasts and music while coding.
