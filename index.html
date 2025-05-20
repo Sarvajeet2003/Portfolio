@@ -12,6 +12,10 @@
 </head>
 
 <body>
+    <!-- Custom cursor elements -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
     <header>
         <nav>
             <h1>Sarvajeeth U K</h1>
@@ -42,7 +46,7 @@
             <p>Passionate about Machine Learning, Backend Development, and Scalable Systems</p>
             <div class="hero-stats">
                 <div class="stat-item">
-                    <span class="stat-number">10+</span>
+                    <span class="stat-number" id="project-counter">0</span><span>+</span>
                     <span class="stat-label">Projects</span>
                 </div>
                 <div class="stat-item">
@@ -63,6 +67,14 @@
                 <a href="https://www.linkedin.com/in/sarvajeeth-u-k/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
                 <a href="https://leetcode.com/sarvajeeth/" target="_blank" class="social-icon"><i class="fab fa-leetcode"></i></a>
             </div>
+        </div>
+        <div class="floating-skills">
+            <div class="skill-icon" style="--delay: 0s;"><i class="fab fa-python"></i></div>
+            <div class="skill-icon" style="--delay: 1s;"><i class="fab fa-js"></i></div>
+            <div class="skill-icon" style="--delay: 2s;"><i class="fab fa-react"></i></div>
+            <div class="skill-icon" style="--delay: 3s;"><i class="fab fa-node-js"></i></div>
+            <div class="skill-icon" style="--delay: 4s;"><i class="fas fa-database"></i></div>
+            <div class="skill-icon" style="--delay: 5s;"><i class="fab fa-aws"></i></div>
         </div>
         <div class="hero-scroll-indicator">
             <span>Scroll Down</span>
@@ -713,6 +725,56 @@
         });
     </script>
     <script src="script.js"></script>
+    
+    <script>
+        // Custom cursor
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.cursor');
+            const cursorFollower = document.querySelector('.cursor-follower');
+            
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                
+                setTimeout(function() {
+                    cursorFollower.style.left = e.clientX + 'px';
+                    cursorFollower.style.top = e.clientY + 'px';
+                }, 100);
+            });
+            
+            // Cursor effects on links
+            const links = document.querySelectorAll('a, button, .cta-btn');
+            links.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                    cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                    cursorFollower.style.borderColor = 'rgba(100, 181, 246, 0.8)';
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursorFollower.style.borderColor = 'rgba(100, 181, 246, 0.5)';
+                });
+            });
+            
+            // Project counter animation
+            const projectCounter = document.getElementById('project-counter');
+            if (projectCounter) {
+                const targetCount = 10;
+                let count = 0;
+                
+                const interval = setInterval(() => {
+                    projectCounter.textContent = count;
+                    count++;
+                    
+                    if (count > targetCount) {
+                        clearInterval(interval);
+                    }
+                }, 200);
+            }
+        });
+    </script>
 
 </body>
 

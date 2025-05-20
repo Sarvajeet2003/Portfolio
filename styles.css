@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
+    cursor: none;
 }
 
 :root {
@@ -173,6 +174,76 @@ nav a:hover {
     top: 0;
     left: 0;
     z-index: 1;
+}
+
+/* Custom Cursor */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+}
+
+.cursor-follower {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(100, 181, 246, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+/* Floating Skills */
+.floating-skills {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.skill-icon {
+    position: absolute;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.7);
+    animation: float 15s infinite ease-in-out;
+    animation-delay: var(--delay);
+}
+
+.skill-icon:nth-child(1) { top: 20%; left: 10%; }
+.skill-icon:nth-child(2) { top: 30%; left: 85%; }
+.skill-icon:nth-child(3) { top: 70%; left: 15%; }
+.skill-icon:nth-child(4) { top: 60%; left: 80%; }
+.skill-icon:nth-child(5) { top: 15%; left: 50%; }
+.skill-icon:nth-child(6) { top: 80%; left: 50%; }
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+    75% {
+        transform: translateY(20px) rotate(-5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
 }
 
 #hero::before {
