@@ -29,6 +29,12 @@
                 <li><a href="#interests">Interests</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="resume.pdf" download class="cv-btn">Download CV</a></li>
+                <li class="theme-toggle">
+                    <button id="theme-toggle-btn" aria-label="Toggle dark/light mode">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -773,6 +779,35 @@
                     }
                 }, 200);
             }
+            
+            // Theme toggle functionality
+            const themeToggleBtn = document.getElementById('theme-toggle-btn');
+            
+            // Check for saved theme preference or use preferred color scheme
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            // Set initial theme
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+            
+            // Toggle theme on button click
+            themeToggleBtn.addEventListener('click', function() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                // Add animation effect
+                document.body.style.transition = 'background-color 0.5s ease, color 0.5s ease';
+                setTimeout(() => {
+                    document.body.style.transition = '';
+                }, 500);
+            });
         });
     </script>
 

@@ -19,6 +19,24 @@
     --gray: #ccc;
     --transition: all 0.3s ease;
     
+    /* Theme variables */
+    --bg-color: #f5f5f5;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --header-bg: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --card-bg: #1e1e1e;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --header-bg: #1a1a1a;
+    --border-color: #333;
+}
     /* Light mode variables */
     --light-bg: #f8f9fa;
     --light-text: #333;
@@ -28,9 +46,10 @@
 }
 
 body {
-    background-color: var(--dark);
-    color: var(--light);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -78,7 +97,7 @@ p {
 
 a {
     text-decoration: none;
-    color: var(--light);
+    color: var(--text-color);
     transition: var(--transition);
 }
 
@@ -86,7 +105,7 @@ a {
 /* Header & Navigation */
 
 header {
-    background: linear-gradient(45deg, #1a1a1a, #333);
+    background: var(--header-bg);
     padding: 1.5rem 0;
     position: fixed;
     width: 100%;
@@ -94,6 +113,7 @@ header {
     z-index: 1000;
     backdrop-filter: blur(5px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
 }
 
 nav {
@@ -244,6 +264,56 @@ nav a:hover {
     100% {
         transform: translateY(0) rotate(0deg);
     }
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+}
+
+#theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--primary);
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle-btn:hover {
+    transform: scale(1.1);
+}
+
+#theme-toggle-btn .fa-sun {
+    position: absolute;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#theme-toggle-btn .fa-moon {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+[data-theme="dark"] #theme-toggle-btn .fa-sun {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-theme="dark"] #theme-toggle-btn .fa-moon {
+    opacity: 0;
+    transform: translateY(-20px);
 }
 
 #hero::before {
@@ -661,12 +731,12 @@ nav a:hover {
 }
 
 .skill-card {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--card-bg);
     padding: 1.5rem;
     border-radius: 10px;
-    transition: var(--transition);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition), background-color 0.3s ease;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
 }
 
 .skill-card:hover {
@@ -707,11 +777,11 @@ nav a:hover {
 }
 
 .project-card {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--card-bg);
     border-radius: 12px;
-    transition: all 0.4s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease, background-color 0.3s ease;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
     height: 100%;
     display: flex;
     flex-direction: column;
