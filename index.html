@@ -1,108 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sarvajeeth UK - GenAI Engineer & Full-Stack Developer specializing in AI/ML, Backend Development, and DeFi solutions.">
-    <meta name="keywords" content="GenAI, Machine Learning, Backend Developer, AI Engineer, Python, Django, Flask, TensorFlow">
-    <meta name="author" content="Sarvajeeth UK">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <!-- Primary Meta Tags -->
     <title>Sarvajeeth UK | GenAI Engineer & Full-Stack Developer</title>
-    
+    <meta name="title" content="Sarvajeeth UK | GenAI Engineer & Full-Stack Developer">
+    <meta name="description" content="Building intelligent systems at the intersection of AI, Backend Engineering, and Web3. GenAI Engineer at Genpact specializing in enterprise AI automation.">
+    <meta name="keywords" content="GenAI, Machine Learning, Backend Developer, AI Engineer, Python, Django, Flask, TensorFlow, Web3, DeFi, IIIT Delhi">
+    <meta name="author" content="Sarvajeeth UK">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" id="theme-color-meta" content="#0a0a0f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sarvajeethuk.dev">
+    <meta property="og:title" content="Sarvajeeth UK | GenAI Engineer & Full-Stack Developer">
+    <meta property="og:description" content="Building intelligent systems at the intersection of AI, Backend Engineering, and Web3.">
+    <meta property="og:image" content="https://sarvajeethuk.dev/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://sarvajeethuk.dev">
+    <meta name="twitter:title" content="Sarvajeeth UK | GenAI Engineer & Full-Stack Developer">
+    <meta name="twitter:description" content="Building intelligent systems at the intersection of AI, Backend Engineering, and Web3.">
+    <meta name="twitter:image" content="https://sarvajeethuk.dev/og-image.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sarvajeeth UK",
+        "jobTitle": "GenAI Engineer",
+        "url": "https://sarvajeethuk.dev",
+        "sameAs": [
+            "https://github.com/Sarvajeet2003",
+            "https://www.linkedin.com/in/sarvajeeth-uk/"
+        ],
+        "alumniOf": "IIIT Delhi",
+        "knowsAbout": ["Generative AI", "Machine Learning", "Backend Development", "Web3", "DeFi"]
+    }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet">
+
+    <!-- Preload critical assets -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="profile.jpg" as="image" type="image/jpeg">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" defer></script>
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- PWA manifest -->
+    <link rel="manifest" href="#">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&lt;/&gt;</text></svg>">
 </head>
 <body>
+    <!-- Skip to Content - Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress" role="progressbar" aria-label="Scroll progress"></div>
+
+    <!-- Spotlight Cursor Overlay -->
+    <div id="spotlight" class="spotlight" aria-hidden="true"></div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor" class="cursor" aria-hidden="true">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
     <!-- Loading Screen -->
-    <div id="loader" class="loader">
+    <div id="loader" class="loader" role="status" aria-label="Loading">
         <div class="loader-content">
-            <div class="loader-text">
-                <span class="loader-bracket">&lt;</span>
-                <span class="loader-name">Sarvajeeth</span>
-                <span class="loader-bracket">/&gt;</span>
-            </div>
-            <div class="loader-bar">
-                <div class="loader-progress"></div>
+            <!-- 3D scene will render behind loader text -->
+            <canvas id="loader-canvas" class="loader-canvas" aria-hidden="true"></canvas>
+            <div class="loader-ui">
+                <div class="loader-terminal" aria-hidden="true">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">Portfolio OS v3.0</span>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">boot --profile "Sarvajeeth UK"</span>
+                        </div>
+                        <div class="terminal-line loading-line" id="loading-line-1">
+                            <span class="terminal-prompt">></span>
+                            <span class="terminal-output" id="loading-status">Initializing neural networks...</span>
+                        </div>
+                        <div class="terminal-line loading-line" id="loading-line-2" style="opacity:0">
+                            <span class="terminal-prompt">></span>
+                            <span class="terminal-output">Loading 3D rendering engine...</span>
+                        </div>
+                        <div class="terminal-line loading-line" id="loading-line-3" style="opacity:0">
+                            <span class="terminal-prompt">></span>
+                            <span class="terminal-output">Calibrating interactive systems...</span>
+                        </div>
+                        <div class="terminal-line loading-line" id="loading-line-4" style="opacity:0">
+                            <span class="terminal-prompt">></span>
+                            <span class="terminal-output">Ready. Launching portfolio.</span>
+                        </div>
+                        <div class="terminal-line loading-progress-bar">
+                            <div class="progress-track">
+                                <div class="progress-fill" id="progress-fill"></div>
+                            </div>
+                            <span class="progress-percent" id="loader-percent">0%</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav id="navbar" class="navbar">
+    <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <span class="logo-bracket">&lt;</span>
+            <a href="#home" class="nav-logo" aria-label="Sarvajeeth UK - Home">
+                <span class="logo-bracket" aria-hidden="true">&lt;</span>
                 <span class="logo-text">SUK</span>
-                <span class="logo-bracket">/&gt;</span>
+                <span class="logo-bracket" aria-hidden="true">/&gt;</span>
             </a>
-            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
-                <span class="hamburger"></span>
+
+            <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
             </button>
-            <ul id="nav-menu" class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+
+            <ul id="nav-menu" class="nav-menu" role="menubar">
+                <li role="none"><a href="#home" class="nav-link active" role="menuitem">Home</a></li>
+                <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+                <li role="none"><a href="#experience" class="nav-link" role="menuitem">Experience</a></li>
+                <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+                <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+                <li role="none"><a href="#achievements" class="nav-link" role="menuitem">Achievements</a></li>
+                <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
             </ul>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle color theme">
+                    <svg class="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <button id="cmd-palette-toggle" class="cmd-toggle" aria-label="Open command palette (Ctrl+K)">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                    </svg>
+                    <span class="cmd-hint">⌘K</span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <canvas id="neural-canvas" class="neural-canvas"></canvas>
+    <!-- Command Palette -->
+    <div id="command-palette" class="command-palette" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+        <div class="command-palette-overlay" tabindex="-1"></div>
+        <div class="command-palette-content">
+            <div class="command-palette-header">
+                <svg class="command-palette-search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <input type="text" id="cmd-palette-input" class="command-palette-input" placeholder="Type a command or search..." autocomplete="off" spellcheck="false">
+                <kbd class="command-palette-esc">ESC</kbd>
+            </div>
+            <div class="command-palette-results" id="cmd-palette-results">
+                <div class="command-palette-group">
+                    <div class="command-palette-group-label">Navigation</div>
+                    <button class="command-palette-item" data-action="navigate" data-target="#home" tabindex="-1">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                        <span>Home</span>
+                    </button>
+                    <button class="command-palette-item" data-action="navigate" data-target="#about" tabindex="-1">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>About</span>
+                    </button>
+                    <button class="command-palette-item" data-action="navigate" data-target="#experience" tabindex="-1">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        <span>Experience</span>
+                    </button>
+                    <button class="command-palette-item" data-action="navigate" data-target="#projects" tabindex="-1">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                        <span>Projects</span>
+                    </button>
+                    <button class="command-palette-item" data-action="navigate" data-target="#skills" tabindex="-1">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        <span>Skills</span>
+                    </button>
+                    <button class="command-palette-item" data-action="navigate" data-target="#achievements" tabindex="-1">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+                        <span>Achievements</span>
+                    </button>
+                    <button class="command-palette-item" data-action="navigate" data-target="#contact" tabindex="-1">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>Contact</span>
+                    </button>
+                </div>
+                <div class="command-palette-group">
+                    <div class="command-palette-group-label">Actions</div>
+                    <button class="command-palette-item" data-action="theme" tabindex="-1">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                        <span>Toggle Theme</span>
+                    </button>
+                    <button class="command-palette-item" data-action="resume" tabindex="-1">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span>Download Resume</span>
+                    </button>
+                    <button class="command-palette-item" data-action="email" tabindex="-1">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>Copy Email Address</span>
+                        <span class="command-palette-badge">sarvajeethuk@gmail.com</span>
+                    </button>
+                    <button class="command-palette-item" data-action="top" tabindex="-1">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+                        <span>Scroll to Top</span>
+                    </button>
+                </div>
+            </div>
+            <div class="command-palette-empty" id="cmd-palette-empty" hidden>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <p>No results found</p>
+            </div>
+            <div class="command-palette-footer">
+                <span><kbd>↑↓</kbd> Navigate</span>
+                <span><kbd>↵</kbd> Select</span>
+                <span><kbd>ESC</kbd> Close</span>
+            </div>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <!-- ==================== HERO SECTION ==================== -->
+        <section id="home" class="hero" aria-label="Hero introduction">
+            <!-- Three.js Background Canvas -->
+            <canvas id="three-canvas" class="three-canvas" aria-hidden="true"></canvas>
+
+            <!-- Spotlight overlay gradient -->
+            <div class="hero-overlay" aria-hidden="true"></div>
+
+            <!-- Floating geometric decorations -->
+            <div class="floating-shapes" aria-hidden="true">
+                <div class="shape shape-1" data-speed="0.02"></div>
+                <div class="shape shape-2" data-speed="0.03"></div>
+                <div class="shape shape-3" data-speed="0.015"></div>
+                <div class="shape shape-4" data-speed="0.025"></div>
+            </div>
+
             <div class="hero-content">
-                <div class="hero-greeting">
+                <div class="hero-badge" data-reveal="scale-up" data-delay="0.2">
+                    <span class="status-dot"></span>
+                    <span>Open to opportunities</span>
+                </div>
+
+                <div class="hero-greeting" data-reveal="fade-up" data-delay="0.4">
                     <span class="greeting-text">Hello, I'm</span>
                 </div>
-                <h1 class="hero-name">Sarvajeeth UK</h1>
-                <div class="hero-title">
+
+                <h1 class="hero-name" data-reveal="fade-up" data-delay="0.6">
+                    <span class="hero-name-line">
+                        <span class="text-gradient">Sarvajeeth</span>
+                    </span>
+                    <span class="hero-name-line">
+                        <span class="text-gradient-alt">UK</span>
+                    </span>
+                </h1>
+
+                <div class="hero-title" data-reveal="fade-up" data-delay="0.8">
                     <span class="title-prefix">I'm a </span>
                     <span id="typed-text" class="typed-text"></span>
-                    <span class="cursor">|</span>
+                    <span class="type-cursor" aria-hidden="true">|</span>
                 </div>
-                <p class="hero-description">
-                    Building intelligent systems at the intersection of AI, Backend Engineering, and Web3. 
+
+                <p class="hero-description" data-reveal="fade-up" data-delay="1.0">
+                    Building intelligent systems at the intersection of <span class="highlight">AI</span>,
+                    <span class="highlight">Backend Engineering</span>, and <span class="highlight">Web3</span>.
                     Currently crafting the future at <span class="highlight">Genpact</span>.
                 </p>
-                <div class="hero-cta">
+
+                <div class="hero-cta" data-reveal="fade-up" data-delay="1.2">
                     <a href="#projects" class="btn btn-primary">
                         <span>View My Work</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
                     </a>
                     <a href="#contact" class="btn btn-secondary">
                         <span>Get In Touch</span>
                     </a>
+                    <a href="Sarvajeeth_Resume.pdf" class="btn btn-ghost" target="_blank" rel="noopener" download>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        <span>Resume</span>
+                    </a>
                 </div>
-                <div class="hero-socials">
-                    <a href="https://github.com/Sarvajeet2003" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+
+                <div class="hero-socials" data-reveal="fade-up" data-delay="1.4">
+                    <a href="https://github.com/Sarvajeet2003" target="_blank" rel="noopener" class="social-link" aria-label="GitHub profile">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                         </svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/sarvajeeth-uk/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <a href="https://www.linkedin.com/in/sarvajeeth-uk/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn profile">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                     </a>
-                    <a href="mailto:sarvajeethuk@gmail.com" class="social-link" aria-label="Email">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <a href="mailto:sarvajeethuk@gmail.com" class="social-link" aria-label="Send email">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                             <polyline points="22,6 12,13 2,6"/>
                         </svg>
                     </a>
+                    <a href="https://leetcode.com/u/s_uk/" target="_blank" rel="noopener" class="social-link" aria-label="LeetCode profile">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.47-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.027 4.295.048l1.559 1.57a1.377 1.377 0 0 0 1.947 0 1.378 1.378 0 0 0 0-1.945l-1.558-1.57a5.883 5.883 0 0 0-4.247-1.636 5.873 5.873 0 0 0-4.219 1.695L4.047 9.51l-.005.005-1.258 1.346a1.43 1.43 0 0 0-.189.253l-.004.003a1.373 1.373 0 0 0-.046.072l-.064.15a1.389 1.389 0 0 0-.077.225l-.001.003c-.007.028-.012.056-.017.084a1.382 1.382 0 0 0-.033.274l-.002.004v.002l-.002.002c0 .031-.003.062-.004.094a1.229 1.229 0 0 0 .011.282h.001a1.38 1.38 0 0 0 .134.437c.03.07.065.137.106.201l.002.003.046.068 5.348 6.136-2.408 2.392c-2.207 2.198-2.189 5.786.039 7.965l.011.01 4.076 3.983c1.124 1.098 2.607 1.66 4.114 1.66 1.514 0 2.992-.568 4.11-1.66l2.397-2.392.021-.019c.536-.541.532-1.413-.006-1.95a1.377 1.377 0 0 0-1.948-.008l-2.406 2.399c-.638.637-1.671.637-2.297-.005l-.022-.021-4.07-3.978c-.66-.651-1.012-1.462-.969-2.272.019-.294.09-.577.214-.845l5.987-5.95.092-.088c1.107-1.06 3.228-.978 4.304.097l1.558 1.57a1.377 1.377 0 0 0 1.947 0 1.378 1.378 0 0 0 0-1.945l-1.558-1.57a5.882 5.882 0 0 0-4.245-1.632 5.883 5.883 0 0 0-4.217 1.693l-.111.108-.592.577-.092.082z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
-            <div class="scroll-indicator">
+
+            <div class="scroll-indicator" aria-hidden="true">
                 <div class="mouse">
                     <div class="wheel"></div>
                 </div>
@@ -110,49 +354,89 @@
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="about section">
+        <!-- Section Divider Wave -->
+        <div class="section-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 1080,0 1440,60 L1440,0 L0,0 Z" fill="var(--section-divider-bg)"/>
+                <path d="M0,40 C360,100 1080,20 1440,40 L1440,0 L0,0 Z" fill="var(--section-divider-accent)" opacity="0.3"/>
+            </svg>
+        </div>
+
+        <!-- ==================== ABOUT SECTION ==================== -->
+        <section id="about" class="about section" aria-label="About me">
             <div class="container">
-                <h2 class="section-title">
-                    <span class="title-number">01.</span>
-                    <span>About Me</span>
-                    <span class="title-line"></span>
-                </h2>
+                <div class="section-header" data-reveal="fade-up">
+                    <h2 class="section-title">
+                        <span class="title-number">01.</span>
+                        <span>About Me</span>
+                        <span class="title-line"></span>
+                    </h2>
+                </div>
+
                 <div class="about-content">
-                    <div class="about-image-container">
+                    <div class="about-image-container" data-reveal="fade-right" data-delay="0.2">
                         <div class="about-image-wrapper">
-                            <img src="profile.jpg" alt="Sarvajeeth UK" class="about-image" loading="lazy">
-                            <div class="image-border"></div>
+                            <div class="image-frame">
+                                <img src="profile.jpg" alt="Portrait of Sarvajeeth UK" class="about-image" loading="lazy" decoding="async">
+                                <div class="image-glow"></div>
+                            </div>
+                            <div class="image-badge">
+                                <span class="badge-dot"></span>
+                                <span>Available for work</span>
+                            </div>
+                        </div>
+                        <!-- GitHub Live Stats -->
+                        <div class="github-mini" id="github-mini">
+                            <div class="github-mini-header">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                <span>GitHub</span>
+                            </div>
+                            <div class="github-mini-stats">
+                                <div class="github-mini-stat">
+                                    <span class="github-mini-value" id="gh-repos">—</span>
+                                    <span class="github-mini-label">Repos</span>
+                                </div>
+                                <div class="github-mini-stat">
+                                    <span class="github-mini-value" id="gh-stars">—</span>
+                                    <span class="github-mini-label">Stars</span>
+                                </div>
+                                <div class="github-mini-stat">
+                                    <span class="github-mini-value" id="gh-langs">—</span>
+                                    <span class="github-mini-label">Languages</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="about-text">
+
+                    <div class="about-text" data-reveal="fade-left" data-delay="0.3">
                         <p>
-                            I'm a <span class="highlight">GenAI Engineer</span> passionate about building intelligent systems 
-                            that solve real-world problems. Currently at <span class="highlight">Genpact</span>, I work on 
+                            I'm a <span class="highlight">GenAI Engineer</span> passionate about building intelligent systems
+                            that solve real-world problems. Currently at <span class="highlight">Genpact</span>, I work on
                             cutting-edge generative AI solutions for enterprise automation.
                         </p>
                         <p>
-                            My journey started with a curiosity for how machines learn, which led me through 
-                            <span class="highlight">IIIT Delhi</span> where I earned my B.Tech in Computer Science. 
-                            Along the way, I've built everything from AI-powered allergen detection systems to 
+                            My journey started with a curiosity for how machines learn, which led me through
+                            <span class="highlight">IIIT Delhi</span> where I earned my B.Tech in Computer Science.
+                            Along the way, I've built everything from AI-powered allergen detection systems to
                             DeFi cross-chain swap servers.
                         </p>
                         <p>
-                            When I'm not coding, you'll find me playing chess, trekking through nature, or 
-                            experimenting with new technologies. I believe in building software that not only 
+                            When I'm not coding, you'll find me playing chess, trekking through nature, or
+                            experimenting with new technologies. I believe in building software that not only
                             works but makes a meaningful impact.
                         </p>
+
                         <div class="about-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">500+</span>
+                            <div class="stat-item" data-reveal="scale-up" data-delay="0.1">
+                                <span class="stat-number" data-target="500" data-suffix="+">0</span>
                                 <span class="stat-label">LeetCode Problems</span>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-number">28+</span>
+                            <div class="stat-item" data-reveal="scale-up" data-delay="0.2">
+                                <span class="stat-number" data-target="28" data-suffix="+">0</span>
                                 <span class="stat-label">GitHub Repos</span>
                             </div>
-                            <div class="stat-item">
-                                <span class="stat-number">3+</span>
+                            <div class="stat-item" data-reveal="scale-up" data-delay="0.3">
+                                <span class="stat-number" data-target="3" data-suffix="+">0</span>
                                 <span class="stat-label">Years Experience</span>
                             </div>
                         </div>
@@ -161,21 +445,37 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="experience section">
+        <!-- Section Divider -->
+        <div class="section-divider section-divider-flip" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="var(--section-divider-bg)"/>
+                <path d="M0,40 C360,100 1080,20 1440,40 L1440,120 L0,120 Z" fill="var(--section-divider-accent)" opacity="0.2"/>
+            </svg>
+        </div>
+
+        <!-- ==================== EXPERIENCE SECTION ==================== -->
+        <section id="experience" class="experience section" aria-label="Work experience">
             <div class="container">
-                <h2 class="section-title">
-                    <span class="title-number">02.</span>
-                    <span>Experience</span>
-                    <span class="title-line"></span>
-                </h2>
+                <div class="section-header" data-reveal="fade-up">
+                    <h2 class="section-title">
+                        <span class="title-number">02.</span>
+                        <span>Experience</span>
+                        <span class="title-line"></span>
+                    </h2>
+                </div>
+
                 <div class="timeline">
-                    <div class="timeline-item" data-aos="fade-up">
-                        <div class="timeline-marker"></div>
+                    <div class="timeline-item" data-reveal="fade-up" data-delay="0.1">
+                        <div class="timeline-marker" aria-hidden="true">
+                            <div class="marker-pulse"></div>
+                        </div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3 class="timeline-title">GenAI Engineer</h3>
-                                <span class="timeline-company">Genpact, Bengaluru</span>
+                                <div>
+                                    <h3 class="timeline-title">GenAI Engineer</h3>
+                                    <span class="timeline-company">Genpact, Bengaluru</span>
+                                </div>
+                                <span class="timeline-badge">Present</span>
                             </div>
                             <span class="timeline-date">August 2025 – Present</span>
                             <ul class="timeline-points">
@@ -191,12 +491,16 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item" data-aos="fade-up">
-                        <div class="timeline-marker"></div>
+                    <div class="timeline-item" data-reveal="fade-up" data-delay="0.2">
+                        <div class="timeline-marker" aria-hidden="true">
+                            <div class="marker-pulse"></div>
+                        </div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3 class="timeline-title">AI Engineer</h3>
-                                <span class="timeline-company">Ekai Labs (Remote)</span>
+                                <div>
+                                    <h3 class="timeline-title">AI Engineer</h3>
+                                    <span class="timeline-company">Ekai Labs (Remote)</span>
+                                </div>
                             </div>
                             <span class="timeline-date">May 2025 – August 2025</span>
                             <ul class="timeline-points">
@@ -213,12 +517,16 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item" data-aos="fade-up">
-                        <div class="timeline-marker"></div>
+                    <div class="timeline-item" data-reveal="fade-up" data-delay="0.3">
+                        <div class="timeline-marker" aria-hidden="true">
+                            <div class="marker-pulse"></div>
+                        </div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3 class="timeline-title">Research Assistant</h3>
-                                <span class="timeline-company">FoodoScope, IIIT Delhi</span>
+                                <div>
+                                    <h3 class="timeline-title">Research Assistant</h3>
+                                    <span class="timeline-company">FoodoScope, IIIT Delhi</span>
+                                </div>
                             </div>
                             <span class="timeline-date">Aug 2023 – May 2025</span>
                             <ul class="timeline-points">
@@ -233,12 +541,16 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item" data-aos="fade-up">
-                        <div class="timeline-marker"></div>
+                    <div class="timeline-item" data-reveal="fade-up" data-delay="0.4">
+                        <div class="timeline-marker" aria-hidden="true">
+                            <div class="marker-pulse"></div>
+                        </div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3 class="timeline-title">Backend Developer</h3>
-                                <span class="timeline-company">Caliper Business Solutions, Bengaluru</span>
+                                <div>
+                                    <h3 class="timeline-title">Backend Developer</h3>
+                                    <span class="timeline-company">Caliper Business Solutions, Bengaluru</span>
+                                </div>
                             </div>
                             <span class="timeline-date">May 2023 – Jul 2023</span>
                             <ul class="timeline-points">
@@ -256,246 +568,208 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects section">
+        <!-- Section Divider -->
+        <div class="section-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 1080,0 1440,60 L1440,0 L0,0 Z" fill="var(--section-divider-bg)"/>
+                <path d="M0,40 C360,100 1080,20 1440,40 L1440,0 L0,0 Z" fill="var(--section-divider-accent)" opacity="0.3"/>
+            </svg>
+        </div>
+
+        <!-- ==================== PROJECTS SECTION ==================== -->
+        <section id="projects" class="projects section" aria-label="Featured projects">
             <div class="container">
-                <h2 class="section-title">
-                    <span class="title-number">03.</span>
-                    <span>Featured Projects</span>
-                    <span class="title-line"></span>
-                </h2>
-                <div class="projects-grid">
-                    <!-- Project 1: Traffic Terminator -->
-                    <article class="project-card featured" data-aos="fade-up">
-                        <div class="project-image">
-                            <div class="project-overlay"></div>
-                            <div class="project-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <path d="M12 6v6l4 2"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category">AI / ML</span>
-                            <h3 class="project-title">Traffic Terminator</h3>
-                            <p class="project-description">
-                                AI-driven solution for Namma Yatri to optimize taxi supply-demand during peak hours. 
-                                Uses LSTM Neural Networks for hotspot prediction and Q-Learning Reinforcement Learning 
-                                for dynamic pricing.
-                            </p>
-                            <div class="project-stats">
-                                <span><strong>23%</strong> Reduced ride denials</span>
-                                <span><strong>18min → 8min</strong> Wait time</span>
-                            </div>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>LSTM</span>
-                                <span>Q-Learning</span>
-                                <span>Flask</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Sarvajeet2003/Traffic-Terminator" target="_blank" rel="noopener" class="project-link">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                    </svg>
-                                    <span>Code</span>
-                                </a>
+                <div class="section-header" data-reveal="fade-up">
+                    <h2 class="section-title">
+                        <span class="title-number">03.</span>
+                        <span>Featured Projects</span>
+                        <span class="title-line"></span>
+                    </h2>
+                </div>
+
+                <!-- Bento Grid Layout -->
+                <div class="projects-bento">
+                    <!-- Project 1: Traffic Terminator (Featured - largest) -->
+                    <article class="project-bento-item bento-featured" data-reveal="scale-up" data-delay="0.1">
+                        <div class="project-bento-inner">
+                            <div class="project-bento-bg" style="background: linear-gradient(135deg, var(--accent-cyan-dim), var(--accent-violet-dim))"></div>
+                            <div class="project-bento-content">
+                                <div class="project-meta">
+                                    <span class="project-category">AI / ML</span>
+                                    <span class="project-status completed">Completed</span>
+                                </div>
+                                <h3 class="project-title">Traffic Terminator</h3>
+                                <p class="project-description">
+                                    AI-driven solution for Namma Yatri to optimize taxi supply-demand during peak hours.
+                                    Uses LSTM Neural Networks for hotspot prediction and Q-Learning Reinforcement Learning
+                                    for dynamic pricing.
+                                </p>
+                                <div class="project-stats">
+                                    <div class="project-stat">
+                                        <span class="project-stat-value">23%</span>
+                                        <span class="project-stat-label">Reduced ride denials</span>
+                                    </div>
+                                    <div class="project-stat-divider"></div>
+                                    <div class="project-stat">
+                                        <span class="project-stat-value">18min → 8min</span>
+                                        <span class="project-stat-label">Wait time</span>
+                                    </div>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">LSTM</span>
+                                    <span class="tech-tag">Q-Learning</span>
+                                    <span class="tech-tag">Flask</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Sarvajeet2003/Traffic-Terminator" target="_blank" rel="noopener" class="project-link" aria-label="View Traffic Terminator source code">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                        <span>Source Code</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </article>
 
                     <!-- Project 2: 1inch Cross-Chain -->
-                    <article class="project-card" data-aos="fade-up">
-                        <div class="project-image">
-                            <div class="project-overlay"></div>
-                            <div class="project-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category">Web3 / DeFi</span>
-                            <h3 class="project-title">1inch Cross-Chain MCP</h3>
-                            <p class="project-description">
-                                MCP Server supporting cross-chain token swaps between Base and Arbitrum networks 
-                                using 1inch Fusion+ APIs. Features portfolio management and real-time order monitoring.
-                            </p>
-                            <div class="project-tech">
-                                <span>TypeScript</span>
-                                <span>MCP</span>
-                                <span>1inch API</span>
-                                <span>Node.js</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Sarvajeet2003/1inch-Cross-chain" target="_blank" rel="noopener" class="project-link">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                    </svg>
-                                    <span>Code</span>
-                                </a>
+                    <article class="project-bento-item bento-wide" data-reveal="fade-up" data-delay="0.2">
+                        <div class="project-bento-inner">
+                            <div class="project-bento-bg" style="background: linear-gradient(135deg, var(--accent-violet-dim), var(--accent-emerald-dim))"></div>
+                            <div class="project-bento-content">
+                                <div class="project-meta">
+                                    <span class="project-category">Web3 / DeFi</span>
+                                </div>
+                                <h3 class="project-title">1inch Cross-Chain MCP</h3>
+                                <p class="project-description">MCP Server supporting cross-chain token swaps between Base and Arbitrum networks using 1inch Fusion+ APIs.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">MCP</span>
+                                    <span class="tech-tag">1inch API</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Sarvajeet2003/1inch-Cross-chain" target="_blank" rel="noopener" class="project-link" aria-label="View source code">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                        <span>Source Code</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </article>
 
                     <!-- Project 3: MedEase -->
-                    <article class="project-card" data-aos="fade-up">
-                        <div class="project-image">
-                            <div class="project-overlay"></div>
-                            <div class="project-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category">Healthcare / ML</span>
-                            <h3 class="project-title">MedEase</h3>
-                            <p class="project-description">
-                                Machine learning model to predict hospital readmissions using FHIR API for data 
-                                integration. Features OpenAI summary generator for actionable patient insights.
-                            </p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>FHIR API</span>
-                                <span>OpenAI</span>
-                                <span>ML</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Sarvajeet2003/MedEase" target="_blank" rel="noopener" class="project-link">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                    </svg>
-                                    <span>Code</span>
-                                </a>
-                                <a href="https://youtu.be/BiUAXh-X9Nc" target="_blank" rel="noopener" class="project-link">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polygon points="5 3 19 12 5 21 5 3"/>
-                                    </svg>
-                                    <span>Demo</span>
-                                </a>
+                    <article class="project-bento-item" data-reveal="fade-up" data-delay="0.3">
+                        <div class="project-bento-inner">
+                            <div class="project-bento-bg" style="background: linear-gradient(135deg, var(--accent-emerald-dim), var(--accent-cyan-dim))"></div>
+                            <div class="project-bento-content">
+                                <div class="project-meta">
+                                    <span class="project-category">Healthcare / ML</span>
+                                </div>
+                                <h3 class="project-title">MedEase</h3>
+                                <p class="project-description">ML model to predict hospital readmissions using FHIR API with OpenAI summary generation.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">FHIR API</span>
+                                    <span class="tech-tag">OpenAI</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Sarvajeet2003/MedEase" target="_blank" rel="noopener" class="project-link">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                        <span>Source Code</span>
+                                    </a>
+                                    <a href="https://youtu.be/BiUAXh-X9Nc" target="_blank" rel="noopener" class="project-link" aria-label="View demo video">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                        <span>Demo</span>
+                                        <span class="link-badge">New</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </article>
 
                     <!-- Project 4: FaceRhythm -->
-                    <article class="project-card" data-aos="fade-up">
-                        <div class="project-image">
-                            <div class="project-overlay"></div>
-                            <div class="project-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <circle cx="12" cy="12" r="10"/>
-                                    <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-                                    <line x1="9" y1="9" x2="9.01" y2="9"/>
-                                    <line x1="15" y1="9" x2="15.01" y2="9"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category">AI / Music</span>
-                            <h3 class="project-title">FaceRhythm</h3>
-                            <p class="project-description">
-                                Emotion-based music recommender using ML to analyze facial expressions. 
-                                Integrates with Spotify API for personalized, real-time music recommendations.
-                            </p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>TensorFlow</span>
-                                <span>Spotify API</span>
-                                <span>Flask</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Sarvajeet2003/FaceRhythm" target="_blank" rel="noopener" class="project-link">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                    </svg>
-                                    <span>Code</span>
-                                </a>
+                    <article class="project-bento-item" data-reveal="fade-up" data-delay="0.4">
+                        <div class="project-bento-inner">
+                            <div class="project-bento-bg" style="background: linear-gradient(135deg, var(--accent-amber-dim), var(--accent-rose-dim))"></div>
+                            <div class="project-bento-content">
+                                <div class="project-meta">
+                                    <span class="project-category">AI / Music</span>
+                                </div>
+                                <h3 class="project-title">FaceRhythm</h3>
+                                <p class="project-description">Emotion-based music recommender using ML to analyze facial expressions via Spotify API.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">TensorFlow</span>
+                                    <span class="tech-tag">Spotify API</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Sarvajeet2003/FaceRhythm" target="_blank" rel="noopener" class="project-link">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                        <span>Source Code</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </article>
 
                     <!-- Project 5: Allergen Detection -->
-                    <article class="project-card" data-aos="fade-up">
-                        <div class="project-image">
-                            <div class="project-overlay"></div>
-                            <div class="project-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
-                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-                                    <line x1="12" x2="12" y1="19" y2="22"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category">Bioinformatics</span>
-                            <h3 class="project-title">Allergen Detection ML</h3>
-                            <p class="project-description">
-                                Machine learning pipeline for allergen classification from protein sequences. 
-                                Features data augmentation and hyperparameter tuning for improved accuracy.
-                            </p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>TensorFlow</span>
-                                <span>scikit-learn</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Sarvajeet2003/Allergen-detection" target="_blank" rel="noopener" class="project-link">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                    </svg>
-                                    <span>Code</span>
-                                </a>
+                    <article class="project-bento-item" data-reveal="fade-up" data-delay="0.5">
+                        <div class="project-bento-inner">
+                            <div class="project-bento-bg" style="background: linear-gradient(135deg, var(--accent-cyan-dim), var(--accent-emerald-dim))"></div>
+                            <div class="project-bento-content">
+                                <div class="project-meta">
+                                    <span class="project-category">Bioinformatics</span>
+                                </div>
+                                <h3 class="project-title">Allergen Detection ML</h3>
+                                <p class="project-description">ML pipeline for allergen classification from protein sequences with data augmentation.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">TensorFlow</span>
+                                    <span class="tech-tag">scikit-learn</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Sarvajeet2003/Allergen-detection" target="_blank" rel="noopener" class="project-link">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                        <span>Source Code</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </article>
 
                     <!-- Project 6: AITestsmith -->
-                    <article class="project-card" data-aos="fade-up">
-                        <div class="project-image">
-                            <div class="project-overlay"></div>
-                            <div class="project-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <span class="project-category">AI Tools</span>
-                            <h3 class="project-title">AITestsmith</h3>
-                            <p class="project-description">
-                                AI-powered testing tool for automated test generation and validation. 
-                                Deployed on Streamlit for easy access and collaboration.
-                            </p>
-                            <div class="project-tech">
-                                <span>Python</span>
-                                <span>Streamlit</span>
-                                <span>AI</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://github.com/Sarvajeet2003/AITestsmith" target="_blank" rel="noopener" class="project-link">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                    </svg>
-                                    <span>Code</span>
-                                </a>
-                                <a href="https://ai-tester.streamlit.app/" target="_blank" rel="noopener" class="project-link">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                        <polyline points="15 3 21 3 21 9"/>
-                                        <line x1="10" y1="14" x2="21" y2="3"/>
-                                    </svg>
-                                    <span>Live</span>
-                                </a>
+                    <article class="project-bento-item bento-tall" data-reveal="fade-up" data-delay="0.6">
+                        <div class="project-bento-inner">
+                            <div class="project-bento-bg" style="background: linear-gradient(135deg, var(--accent-violet-dim), var(--accent-amber-dim))"></div>
+                            <div class="project-bento-content">
+                                <div class="project-meta">
+                                    <span class="project-category">AI Tools</span>
+                                </div>
+                                <h3 class="project-title">AITestsmith</h3>
+                                <p class="project-description">AI-powered testing tool for automated test generation and validation. Deployed on Streamlit.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Streamlit</span>
+                                    <span class="tech-tag">AI</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/Sarvajeet2003/AITestsmith" target="_blank" rel="noopener" class="project-link">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                        <span>Source Code</span>
+                                    </a>
+                                    <a href="https://ai-tester.streamlit.app/" target="_blank" rel="noopener" class="project-link">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                                        <span>Live Demo</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </article>
                 </div>
-                <div class="projects-more">
+
+                <div class="projects-more" data-reveal="fade-up">
                     <a href="https://github.com/Sarvajeet2003?tab=repositories" target="_blank" rel="noopener" class="btn btn-outline">
-                        <span>View All Projects</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <span>View All Projects on GitHub</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
                             <polyline points="15 3 21 3 21 9"/>
                             <line x1="10" y1="14" x2="21" y2="3"/>
@@ -505,18 +779,29 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="skills section">
+        <!-- Section Divider -->
+        <div class="section-divider section-divider-flip" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="var(--section-divider-bg)"/>
+                <path d="M0,40 C360,100 1080,20 1440,40 L1440,120 L0,120 Z" fill="var(--section-divider-accent)" opacity="0.2"/>
+            </svg>
+        </div>
+
+        <!-- ==================== SKILLS SECTION ==================== -->
+        <section id="skills" class="skills section" aria-label="Skills and technologies">
             <div class="container">
-                <h2 class="section-title">
-                    <span class="title-number">04.</span>
-                    <span>Skills & Technologies</span>
-                    <span class="title-line"></span>
-                </h2>
+                <div class="section-header" data-reveal="fade-up">
+                    <h2 class="section-title">
+                        <span class="title-number">04.</span>
+                        <span>Skills & Technologies</span>
+                        <span class="title-line"></span>
+                    </h2>
+                </div>
+
                 <div class="skills-grid">
-                    <div class="skill-category" data-aos="fade-up">
+                    <div class="skill-category" data-reveal="rotate-x" data-delay="0.1">
                         <div class="skill-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
                                 <line x1="8" y1="21" x2="16" y2="21"/>
                                 <line x1="12" y1="17" x2="12" y2="21"/>
@@ -533,17 +818,20 @@
                             <span class="skill-tag">Docker</span>
                             <span class="skill-tag">Git</span>
                         </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-label">Proficiency</div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="90%"></div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="skill-category" data-aos="fade-up">
+                    <div class="skill-category" data-reveal="rotate-x" data-delay="0.2">
                         <div class="skill-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                                 <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
-                                <path d="M8.5 8.5v.01"/>
-                                <path d="M16 15.5v.01"/>
-                                <path d="M12 12v.01"/>
-                                <path d="M11 17v.01"/>
-                                <path d="M7 14v.01"/>
+                                <path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/>
+                                <path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/>
                             </svg>
                         </div>
                         <h3 class="skill-title">AI & Machine Learning</h3>
@@ -557,11 +845,17 @@
                             <span class="skill-tag">NumPy</span>
                             <span class="skill-tag">MCP Server</span>
                         </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-label">Proficiency</div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="85%"></div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="skill-category" data-aos="fade-up">
+                    <div class="skill-category" data-reveal="rotate-x" data-delay="0.3">
                         <div class="skill-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                                 <polyline points="16 18 22 12 16 6"/>
                                 <polyline points="8 6 2 12 8 18"/>
                             </svg>
@@ -575,11 +869,17 @@
                             <span class="skill-tag">JavaScript</span>
                             <span class="skill-tag">SQL</span>
                         </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-label">Proficiency</div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="88%"></div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="skill-category" data-aos="fade-up">
+                    <div class="skill-category" data-reveal="rotate-x" data-delay="0.4">
                         <div class="skill-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                             </svg>
                         </div>
@@ -588,65 +888,87 @@
                             <span class="skill-tag">Postman</span>
                             <span class="skill-tag">Dune APIs</span>
                             <span class="skill-tag">Security Testing</span>
-                            <span class="skill-tag">Authentication Systems</span>
-                            <span class="skill-tag">Vulnerability Scanning</span>
+                            <span class="skill-tag">Auth Systems</span>
+                            <span class="skill-tag">Vuln. Scanning</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-bar-label">Proficiency</div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" data-width="82%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Education & Achievements Section -->
-        <section id="achievements" class="achievements section">
+        <!-- Section Divider -->
+        <div class="section-divider" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 1080,0 1440,60 L1440,0 L0,0 Z" fill="var(--section-divider-bg)"/>
+                <path d="M0,40 C360,100 1080,20 1440,40 L1440,0 L0,0 Z" fill="var(--section-divider-accent)" opacity="0.3"/>
+            </svg>
+        </div>
+
+        <!-- ==================== ACHIEVEMENTS SECTION ==================== -->
+        <section id="achievements" class="achievements section" aria-label="Education and achievements">
             <div class="container">
-                <h2 class="section-title">
-                    <span class="title-number">05.</span>
-                    <span>Education & Achievements</span>
-                    <span class="title-line"></span>
-                </h2>
+                <div class="section-header" data-reveal="fade-up">
+                    <h2 class="section-title">
+                        <span class="title-number">05.</span>
+                        <span>Education & Achievements</span>
+                        <span class="title-line"></span>
+                    </h2>
+                </div>
+
                 <div class="achievements-grid">
-                    <!-- Education -->
-                    <div class="achievements-column">
+                    <!-- Education Column -->
+                    <div class="achievements-column" data-reveal="fade-right">
                         <h3 class="achievements-subtitle">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
                                 <path d="M6 12v5c3 3 9 3 12 0v-5"/>
                             </svg>
                             <span>Education</span>
                         </h3>
+
                         <div class="education-cards">
-                            <div class="education-card" data-aos="fade-up">
+                            <div class="education-card" data-reveal="blur-in" data-delay="0.1">
                                 <div class="education-year">2021 – 2025</div>
                                 <h4 class="education-degree">B.Tech in Computer Science</h4>
                                 <p class="education-institution">IIIT Delhi</p>
+                                <div class="education-gpa">CGPA: 8.12/10</div>
                             </div>
-                            <div class="education-card" data-aos="fade-up">
+
+                            <div class="education-card" data-reveal="blur-in" data-delay="0.2">
                                 <div class="education-year">2019 – 2021</div>
                                 <h4 class="education-degree">Karnataka Board of Secondary School</h4>
                                 <p class="education-institution">BGS PU College, Mysuru</p>
-                                <span class="education-score">Score: 96.6%</span>
+                                <div class="education-score">Score: 96.6%</div>
                             </div>
-                            <div class="education-card" data-aos="fade-up">
+
+                            <div class="education-card" data-reveal="blur-in" data-delay="0.3">
                                 <div class="education-year">2009 – 2019</div>
                                 <h4 class="education-degree">Class I - X (CBSE)</h4>
                                 <p class="education-institution">St. Joseph's Central School, Mysuru</p>
-                                <span class="education-score">Score: 95.6%</span>
+                                <div class="education-score">Score: 95.6%</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Achievements -->
-                    <div class="achievements-column">
+                    <!-- Achievements Column -->
+                    <div class="achievements-column" data-reveal="fade-left">
                         <h3 class="achievements-subtitle">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <circle cx="12" cy="8" r="6"/>
                                 <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
                             </svg>
                             <span>Achievements</span>
                         </h3>
+
                         <div class="achievement-cards">
-                            <div class="achievement-card" data-aos="fade-up">
-                                <div class="achievement-icon gold">
+                            <div class="achievement-card" data-reveal="blur-in" data-delay="0.1">
+                                <div class="achievement-icon gold" aria-hidden="true">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
                                     </svg>
@@ -656,8 +978,9 @@
                                     <p>3rd Year at IIIT Delhi</p>
                                 </div>
                             </div>
-                            <div class="achievement-card" data-aos="fade-up">
-                                <div class="achievement-icon silver">
+
+                            <div class="achievement-card" data-reveal="blur-in" data-delay="0.2">
+                                <div class="achievement-icon silver" aria-hidden="true">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <circle cx="12" cy="8" r="6"/>
                                         <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
@@ -668,8 +991,9 @@
                                     <p>Top 9 out of 150+ teams</p>
                                 </div>
                             </div>
-                            <div class="achievement-card" data-aos="fade-up">
-                                <div class="achievement-icon bronze">
+
+                            <div class="achievement-card" data-reveal="blur-in" data-delay="0.3">
+                                <div class="achievement-icon bronze" aria-hidden="true">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <circle cx="12" cy="8" r="6"/>
                                         <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
@@ -680,8 +1004,9 @@
                                     <p>Innovative project development</p>
                                 </div>
                             </div>
-                            <div class="achievement-card" data-aos="fade-up">
-                                <div class="achievement-icon code">
+
+                            <div class="achievement-card" data-reveal="blur-in" data-delay="0.4">
+                                <div class="achievement-icon code" aria-hidden="true">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <polyline points="16 18 22 12 16 6"/>
                                         <polyline points="8 6 2 12 8 18"/>
@@ -698,72 +1023,187 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact section">
+        <!-- Section Divider -->
+        <div class="section-divider section-divider-flip" aria-hidden="true">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="var(--section-divider-bg)"/>
+                <path d="M0,40 C360,100 1080,20 1440,40 L1440,120 L0,120 Z" fill="var(--section-divider-accent)" opacity="0.2"/>
+            </svg>
+        </div>
+
+        <!-- ==================== CONTACT SECTION ==================== -->
+        <section id="contact" class="contact section" aria-label="Get in touch">
             <div class="container">
-                <h2 class="section-title center">
-                    <span class="title-number">06.</span>
-                    <span>Get In Touch</span>
-                </h2>
-                <div class="contact-content">
+                <div class="section-header" data-reveal="fade-up">
+                    <h2 class="section-title center">
+                        <span class="title-number">06.</span>
+                        <span>Get In Touch</span>
+                    </h2>
+                </div>
+
+                <div class="contact-content" data-reveal="fade-up">
                     <p class="contact-intro">
-                        I'm currently open to new opportunities and collaborations. Whether you have a project in mind, 
+                        I'm currently open to new opportunities and collaborations. Whether you have a project in mind,
                         a question to ask, or just want to say hi, my inbox is always open!
                     </p>
+
                     <div class="contact-methods">
-                        <a href="mailto:sarvajeethuk@gmail.com" class="contact-method">
+                        <a href="mailto:sarvajeethuk@gmail.com" class="contact-method" aria-label="Send email to sarvajeethuk@gmail.com">
                             <div class="contact-icon">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
                                     <polyline points="22,6 12,13 2,6"/>
                                 </svg>
                             </div>
-                            <span>sarvajeethuk@gmail.com</span>
+                            <span class="contact-label">Email</span>
+                            <span class="contact-value">sarvajeethuk@gmail.com</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/sarvajeeth-uk/" target="_blank" rel="noopener" class="contact-method">
+
+                        <a href="https://www.linkedin.com/in/sarvajeeth-uk/" target="_blank" rel="noopener" class="contact-method" aria-label="Visit LinkedIn profile">
                             <div class="contact-icon">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                                 </svg>
                             </div>
-                            <span>LinkedIn</span>
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">/in/sarvajeeth-uk</span>
                         </a>
-                        <a href="https://github.com/Sarvajeet2003" target="_blank" rel="noopener" class="contact-method">
+
+                        <a href="https://github.com/Sarvajeet2003" target="_blank" rel="noopener" class="contact-method" aria-label="Visit GitHub profile">
                             <div class="contact-icon">
-                                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                                 </svg>
                             </div>
-                            <span>GitHub</span>
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">@Sarvajeet2003</span>
                         </a>
                     </div>
-                    <a href="mailto:sarvajeethuk@gmail.com" class="btn btn-primary btn-large">
-                        <span>Say Hello</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="22" y1="2" x2="11" y2="13"/>
-                            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                        </svg>
-                    </a>
+
+                    <!-- Contact Form -->
+                    <form id="contact-form" class="contact-form" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name" class="form-label">Name</label>
+                                <input type="text" id="form-name" name="name" class="form-input" required placeholder="Your name" autocomplete="name">
+                                <span class="form-error" role="alert"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email" class="form-label">Email</label>
+                                <input type="email" id="form-email" name="email" class="form-input" required placeholder="your@email.com" autocomplete="email">
+                                <span class="form-error" role="alert"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-subject" class="form-label">Subject</label>
+                            <input type="text" id="form-subject" name="subject" class="form-input" placeholder="What's this about?" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message" class="form-label">Message</label>
+                            <textarea id="form-message" name="message" class="form-input form-textarea" required placeholder="Tell me about your project or idea..." rows="5" autocomplete="off"></textarea>
+                            <span class="form-error" role="alert"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large btn-submit">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" stroke-dasharray="31.4 31.4" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                            <span class="btn-success" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                            </span>
+                        </button>
+                    </form>
+
+                    <div class="contact-alternative">
+                        <p>Or reach out directly:</p>
+                        <a href="mailto:sarvajeethuk@gmail.com" class="contact-email-link">sarvajeethuk@gmail.com</a>
+                        <button class="copy-email-btn" id="copy-email-btn" aria-label="Copy email address">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                            </svg>
+                            <span class="copy-text">Copy</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <a href="#home" class="footer-logo" aria-label="Back to top">
+                        <span class="logo-bracket" aria-hidden="true">&lt;</span>
+                        <span class="logo-text">SUK</span>
+                        <span class="logo-bracket" aria-hidden="true">/&gt;</span>
+                    </a>
+                    <p class="footer-tagline">GenAI Engineer & Full-Stack Developer</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-links-column">
+                        <h4 class="footer-links-title">Navigation</h4>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#experience">Experience</a></li>
+                            <li><a href="#projects">Projects</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4 class="footer-links-title">Connect</h4>
+                        <ul>
+                            <li><a href="https://github.com/Sarvajeet2003" target="_blank" rel="noopener">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/sarvajeeth-uk/" target="_blank" rel="noopener">LinkedIn</a></li>
+                            <li><a href="mailto:sarvajeethuk@gmail.com">Email</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links-column">
+                        <h4 class="footer-links-title">Quick</h4>
+                        <ul>
+                            <li><button class="footer-cmd-btn" id="footer-cmd-btn">Command Palette <kbd>⌘K</kbd></button></li>
+                            <li><a href="Sarvajeeth_Resume.pdf" download>Download Resume</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
                 <p class="footer-text">
-                    Designed & Built by <span class="highlight">Sarvajeeth UK</span>
+                    Designed & Built with
+                    <span class="footer-heart" aria-label="love">❤</span>
+                    by <span class="highlight">Sarvajeeth UK</span>
                 </p>
-                <p class="footer-copyright">
-                    © 2024 All Rights Reserved
-                </p>
+                <p class="footer-copyright">© 2025 All Rights Reserved</p>
             </div>
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="alert" aria-live="polite" hidden>
+        <span class="toast-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <span class="toast-message" id="toast-message">Copied!</span>
+    </div>
+
     <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
