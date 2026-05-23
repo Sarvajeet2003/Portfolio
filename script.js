@@ -118,7 +118,13 @@ const App = {
             CopyEmail,
             Toast
         ];
-        this.modules.forEach(m => { if (m.init) m.init(); });
+        this.modules.forEach(m => {
+            try {
+                if (m.init) m.init();
+            } catch (e) {
+                console.warn('Module init failed:', e);
+            }
+        });
         console.log('%c ⚡ Sarvajeeth UK — Portfolio v3.0 ',
             'background: #0a0a0f; color: #00d4ff; font-size: 14px; font-weight: bold; padding: 8px 12px; border-radius: 4px; border: 1px solid #00d4ff;');
         console.log('%c🔧 Built with passion, precision, and Three.js 🚀',
